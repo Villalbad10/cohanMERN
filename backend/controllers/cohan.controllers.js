@@ -20,8 +20,13 @@ export const createCohan = async (req, res) => {
   });
 };
 
-export const updateCohan = (req, res) => {
-  res.send("actualizando dbCohan");
+export const updateCohan = async (req, res) => {
+  const result = await poll.query("UPDATE person SET ? WHERE id = ?", [
+    req.body,
+    req.params.id,
+  ]);
+
+  res.json(result);
 };
 
 export const deleteCohan = async (req, res) => {
@@ -32,5 +37,6 @@ export const deleteCohan = async (req, res) => {
   if (result.affectedRows === 0) {
     return res.status(404).json({ message: "Persona no encontrada" });
   }
+
   return res.sendStatus(204);
 };
