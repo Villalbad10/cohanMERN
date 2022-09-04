@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass&display=swap");
+
+body {
+  background-color: #e5e5e5;
+  font-family: "Overpass", sans-serif;
+}
+
+.input-login {
+  border-radius: 1.5rem;
+}
+
+.btn-google {
+  border: 2px solid #518ef8;
+  border-radius: 1.5rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+.btn-google:hover {
+  border: 2px solid #f9ca24;
+  background-color: #f6e58d;
+}
+
+.btn-google img {
+  padding-left: 1rem;
+}
