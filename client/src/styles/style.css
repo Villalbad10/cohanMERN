@@ -23,3 +23,23 @@ body {
 .btn-google img {
   padding-left: 1rem;
 }
+.input-add {
+  border: 1px solid #518ef8;
+  border-radius: 1.5rem;
+  margin-top: 1rem;
+  padding-left: 0.5rem;
+  width: 100%;
+}
+.btn-add {
+  background-color: #518ef8;
+  border: 3px solid #518ef8;
+  margin-top: 2rem;
+  font-weight: 500;
+  color: white;
+}
+
+.btn-add:hover {
+  background-color: white;
+  border: 3px solid #518ef8;
+  color: black;
+}
