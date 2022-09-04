@@ -4,6 +4,8 @@ import { Button, Card, Modal } from "react-bootstrap";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { postData } from "../helpers/postData";
+import { AiFillDelete } from "react-icons/ai";
+import { deleteData } from "../helpers/deleteData";
 
 const add = Yup.object().shape({
   nombre: Yup.string().required("Este campo es requerido"),
@@ -26,7 +28,7 @@ const Home = () => {
   useEffect(() => {
     getData().then((res) => setData(res.data));
     //console.log(data);
-  }, []);
+  }, [data]);
 
   return (
     <div className="container">
@@ -114,6 +116,11 @@ const Home = () => {
               <Card.Text>
                 <strong>Email:</strong> {email}
               </Card.Text>
+              <section>
+                <span onClick={() => deleteData(id)}>
+                  <AiFillDelete className="icon-delete" />
+                </span>
+              </section>
             </Card.Body>
           </Card>
         ))}
