@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getData } from "../helpers/getData";
-import { Button, Modal } from "react-bootstrap";
+import { Button, Card, Modal } from "react-bootstrap";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { postData } from "../helpers/postData";
@@ -18,12 +18,14 @@ const add = Yup.object().shape({
 
 const Home = () => {
   const [show, setShow] = useState(false);
+  const [data, setData] = useState([]);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   useEffect(() => {
-    getData().then((res) => console.log(res.data));
+    getData().then((res) => setData(res.data));
+    //console.log(data);
   }, []);
 
   return (
@@ -31,7 +33,6 @@ const Home = () => {
       <Button variant="success" onClick={handleShow}>
         Agregar
       </Button>
-
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Agregar</Modal.Title>
@@ -96,6 +97,27 @@ const Home = () => {
           </Formik>
         </Modal.Body>
       </Modal>
+
+      <section className="d-flex justify-content-center flex-wrap mt-4">
+        {data.map(({ id, nombre, phone, email }) => (
+          <Card
+            className="me-4 mt-2"
+            key={id}
+            border="primary"
+            style={{ width: "18.5rem" }}
+          >
+            <Card.Header>{nombre}</Card.Header>
+            <Card.Body>
+              <Card.Text>
+                <strong>Cel:</strong> {phone}
+              </Card.Text>
+              <Card.Text>
+                <strong>Email:</strong> {email}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        ))}
+      </section>
     </div>
   );
 };
