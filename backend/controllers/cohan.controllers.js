@@ -24,6 +24,13 @@ export const updateCohan = (req, res) => {
   res.send("actualizando dbCohan");
 };
 
-export const deleteCohan = (req, res) => {
-  res.send("eliminando dbCohan");
+export const deleteCohan = async (req, res) => {
+  const [result] = await poll.query("DELETE FROM person WHERE id = ?", [
+    req.params.id,
+  ]);
+
+  if (result.affectedRows === 0) {
+    return res.status(404).json({ message: "Persona no encontrada" });
+  }
+  return res.sendStatus(204);
 };
