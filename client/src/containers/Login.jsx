@@ -1,4 +1,5 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import {
   ContainerLogin,
   ContFrom,
@@ -6,8 +7,10 @@ import {
   OptionLogin,
 } from "../styles/styles";
 import { Button, Form } from "react-bootstrap";
+import { loginGoogle } from "../firebase/loginGoogle";
 
 const Login = () => {
+  const dispatch = useDispatch();
   return (
     <ContainerLogin>
       <OptionLogin>
@@ -39,7 +42,10 @@ const Login = () => {
             </Button>
           </Form>
         </ContFrom>
-        <button className="btn-google mt-4">
+        <button
+          onClick={() => dispatch(loginGoogle())}
+          className="btn-google mt-4"
+        >
           Inicie con
           <img src="https://res.cloudinary.com/villalbad10/image/upload/v1661009700/titaMedia/google_avbjfd.png" />{" "}
         </button>
