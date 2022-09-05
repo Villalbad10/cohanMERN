@@ -8,6 +8,7 @@ import { Button, Card, Modal } from "react-bootstrap";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { updateData } from "../helpers/updateData";
+import { ToastContainer, toast } from "react-toastify";
 
 const add = Yup.object().shape({
   nombre: Yup.string().required("Este campo es requerido"),
@@ -47,9 +48,17 @@ const Home = () => {
       email: editar[0].email,
     });
   };
-
+  const handleDelete = (id) => {
+    deleteData(id);
+    toast.error("Registro eliminado con exito");
+  };
+  const handleBotonUpdate = () => {
+    setShow(false);
+    toast.info("Registro actualizado con exito");
+  };
   return (
     <div className="container">
+      <ToastContainer />
       <Agregar />
 
       <section className="d-flex justify-content-center flex-wrap mt-4">
@@ -60,7 +69,9 @@ const Home = () => {
             border="primary"
             style={{ width: "18.5rem" }}
           >
-            <Card.Header>{nombre}</Card.Header>
+            <Card.Header>
+              <strong>{nombre}</strong>
+            </Card.Header>
             <Card.Body>
               <Card.Text>
                 <strong>Cel:</strong> {phone}
@@ -71,7 +82,7 @@ const Home = () => {
               <section className="d-flex justify-content-between">
                 <button
                   className="btn btn-outline-danger "
-                  onClick={() => deleteData(id)}
+                  onClick={() => handleDelete(id)}
                 >
                   <AiFillDelete />
                 </button>
@@ -136,6 +147,7 @@ const Home = () => {
                   ) : null}
 
                   <Button
+                    onClick={() => handleBotonUpdate()}
                     variant="contained"
                     color="success"
                     type="submit"
