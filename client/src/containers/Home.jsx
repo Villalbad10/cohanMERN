@@ -64,12 +64,12 @@ const Home = () => {
       <section className="d-flex justify-content-center flex-wrap mt-4">
         {data.map(({ id, nombre, phone, email }) => (
           <Card
-            className="me-4 mt-2"
+            className="me-4 mt-4 targeta"
             key={id}
             border="primary"
             style={{ width: "18.5rem" }}
           >
-            <Card.Header>
+            <Card.Header className="text-center">
               <strong>{nombre}</strong>
             </Card.Header>
             <Card.Body>

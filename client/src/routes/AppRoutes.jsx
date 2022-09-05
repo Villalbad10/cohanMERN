@@ -1,7 +1,7 @@
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { dataLogin } from "../app/user.slice";
 import Login from "../containers/Login";
 import { DasboardRouter } from "./DashboarRouter";
@@ -29,7 +29,7 @@ const AppRoutes = () => {
   if (checkAuth) return <h1 style={{ color: "black" }}>Espere...</h1>;
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route
           path="/login"
@@ -49,7 +49,7 @@ const AppRoutes = () => {
           }
         />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 

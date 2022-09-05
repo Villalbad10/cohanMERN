@@ -74,7 +74,7 @@ Clone the repository & install dependencies:
 git clone https://github.com/Villalbad10/cohanMERN.git
 cd cohanMERN
 npm install
-npm run start
+npm run dev
 ```
 
 
