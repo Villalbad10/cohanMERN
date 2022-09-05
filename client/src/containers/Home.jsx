@@ -48,10 +48,12 @@ const Home = () => {
       email: editar[0].email,
     });
   };
+
   const handleDelete = (id) => {
     deleteData(id);
     toast.error("Registro eliminado con exito");
   };
+
   const handleBotonUpdate = () => {
     setShow(false);
     toast.info("Registro actualizado con exito");
@@ -81,13 +83,13 @@ const Home = () => {
               </Card.Text>
               <section className="d-flex justify-content-between">
                 <button
-                  className="btn btn-outline-danger "
+                  className="btn btn-outline-danger"
                   onClick={() => handleDelete(id)}
                 >
                   <AiFillDelete />
                 </button>
                 <button
-                  className="btn btn-outline-warning "
+                  className="btn btn-outline-warning"
                   onClick={() => handleEditar(id)}
                 >
                   <FaEdit />
