@@ -58,6 +58,7 @@ const Home = () => {
     setShow(false);
     toast.info("Registro actualizado con exito");
   };
+  
   return (
     <div className="container">
       <ToastContainer />
