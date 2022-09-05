@@ -28,6 +28,7 @@ body {
   border-radius: 1.5rem;
   margin-top: 1rem;
   padding-left: 0.5rem;
+  padding: 0.5rem;
   width: 100%;
 }
 .btn-add {
@@ -44,4 +45,8 @@ body {
   color: black;
 }
 .targeta:hover {
-  box-shadow: 2px 12px 17px 5px rgba(0,0,0,0.1);}
+  box-shadow: 2px 12px 17px 5px rgba(0, 0, 0, 0.1);
+}
+.error {
+  color: #d63031;
+}

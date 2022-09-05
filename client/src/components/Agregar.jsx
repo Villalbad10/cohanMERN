@@ -57,7 +57,7 @@ const Agregar = () => {
                   value={values.nombre}
                 />
                 {errors.nombre && touched.nombre ? (
-                  <div>{errors.nombre}</div>
+                  <div className="error">{errors.nombre}</div>
                 ) : null}
                 <Field
                   type="text"
@@ -67,7 +67,7 @@ const Agregar = () => {
                   value={values.phone}
                 />
                 {errors.phone && touched.phone ? (
-                  <div>{errors.phone}</div>
+                  <div className="error">{errors.phone}</div>
                 ) : null}
                 <Field
                   type="email"
@@ -77,7 +77,7 @@ const Agregar = () => {
                   value={values.email}
                 />
                 {errors.email && touched.email ? (
-                  <div>{errors.email}</div>
+                  <div className="error">{errors.email}</div>
                 ) : null}
 
                 <Button
