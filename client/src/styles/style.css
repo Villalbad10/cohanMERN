@@ -43,11 +43,3 @@ body {
   border: 3px solid #518ef8;
   color: black;
 }
-
-.icon-delete {
-  cursor: pointer;
-  color: #d63031;
-}
-.icon-delete:hover {
-  color: #ff7675;
-}
